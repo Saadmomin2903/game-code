@@ -22,7 +22,7 @@ def generate_code_suggestions(code, prompt):
     
     # Create a prompt for Groq that includes the analysis
     try:
-        client = groq.Client(api_key=os.environ.get("GROQ_API_KEY"))
+        client = groq.Groq(api_key=os.environ.get("GROQ_API_KEY"))
         response = client.chat.completions.create(
             model="llama3-70b-8192",  # Using Llama 3 70B model
             messages=[
