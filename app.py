@@ -144,8 +144,8 @@ with st.sidebar:
     st.header("Example Code")
     example_files = {
         "None": "",
-        "Game Physics System": Path("/Users/saadmomin/Downloads/code_iterator/examples/entity_component.cpp").read_text(),
-        "Entity Component System": Path("/Users/saadmomin/Downloads/code_iterator/examples/game_physics.cpp").read_text()
+        "Game Physics System": Path("examples/entity_component.cpp").read_text(),
+        "Entity Component System": Path("examples/game_physics.cpp").read_text()
     }
     
     selected_example = st.selectbox("Select an example:", list(example_files.keys()))
