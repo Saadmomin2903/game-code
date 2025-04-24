@@ -26,12 +26,12 @@ def generate_code_suggestions(code, prompt):
         if not api_key:
             raise ValueError("GROQ_API_KEY environment variable is not set")
             
-        client = groq.Groq(
-            api_key=api_key,
-            timeout=30.0
-        )
+        # Initialize Groq client with minimal configuration
+        client = groq.Groq(api_key=api_key)
+        
+        # Create the chat completion request
         response = client.chat.completions.create(
-            model="llama3-70b-8192",  # Using Llama 3 70B model
+            model="llama3-70b-8192",
             messages=[
                 {"role": "system", "content": f"""You are a C++ expert specializing in game development. 
 Your task is to improve the provided code based on the user's request and the static analysis results.
